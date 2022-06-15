@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+<br>
+
+    <h1 style="text-align:center">Welcome to QR code Generator</h1>
+    <div class="container shadow" style="width: 800px; margin-top: 5em; padding: 2em">
+      {% comment %} <button type="button" style="color:white" class="btn btn-primary"><a href="{% url 'qr_code' %}">Text
+          to QR</a> </button>
+      <button type="button" style="color:white" class="btn btn-primary"> <a href="{% url 'qrcode_decoder' %}">QR Image
+          to Text</a> </button> {% endcomment %}
+      <button style=" color:white" class="btn btn-primary"><a style=" color:white ;text-decoration:none"
+          href="{% url 'qr_code' %}">Text to QR</a></button>
+      <button style=" color:white" class="btn btn-primary"><a style=" color:white ;text-decoration:none"
+          href="{% url 'qrcode_decoder' %}">QR Image to Text</a> </a></button>
+    </div>
+  </div>
+</body>
+
+</html>

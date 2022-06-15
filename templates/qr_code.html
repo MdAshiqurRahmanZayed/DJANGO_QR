@@ -1,0 +1,59 @@
+<html>
+
+<head>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+     <title>Text to QR image</title>
+     <style>
+          textarea {
+               width: 100%;
+               height: 150px;
+               padding: 12px 20px;
+               box-sizing: border-box;
+               border: 2px solid #ccc;
+               border-radius: 4px;
+               background-color: #f8f8f8;
+               font-size: 16px;
+               resize: none;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <br>
+          <br>
+          <br>
+          <h1>Text to QR image</h1>
+          <br>
+          <br>
+          
+          <form method="post" action="{% url 'qr_code'%}">
+               {% csrf_token %}
+
+               <textarea rows="6" name="data" id="data" placeholder="Enter some text" cols="80"
+                    maxlength="1000"></textarea>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="action" >Generate QR Code</button>
+
+               {% comment %} <input type="submit" name="action" value="Generate QR Code"> {% endcomment %}
+          </form>
+          {% if qr_filename %}
+          <img style="display: block;
+               margin-left: auto;
+               margin-right: auto;
+               width: 50%;" src='/media/{{qr_filename}}'>
+          {% endif %}
+
+
+     </div>
+
+
+
+</body>
+
+</html>
