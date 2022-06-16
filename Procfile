@@ -1,1 +1,1 @@
-web: gunicorn DJANGO_QR.wsgi 
+web: gunicorn DJANGO_QR.wsgi --log-file -
