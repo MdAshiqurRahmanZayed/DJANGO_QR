@@ -1,6 +1,6 @@
 # DJANGO_QR
 
-[a link](http://mdzayed.pythonanywhere.com/)
+[LIVE DEMO ](http://mdzayed.pythonanywhere.com/)
 
 ## Setup
 The first thing to do is to clone the repository:
